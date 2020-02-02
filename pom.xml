@@ -16,7 +16,6 @@
 
 	<properties>
 		<java.version>13</java.version>
-		<springfox-swagger2.version>2.9.1</springfox-swagger2.version>
 	</properties>
 
 	<dependencies>
@@ -45,17 +44,21 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<jvmArguments>
+						--enable-preview
+					</jvmArguments>
+				</configuration>
+			</plugin>
+			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
 					<argLine>--enable-preview</argLine>
 				</configuration>
 			</plugin>
 			<plugin>
-				<artifactId>maven-failsafe-plugin</artifactId>
-				<configuration>
-					<argLine>--enable-preview</argLine>
-				</configuration>
-			</plugin>			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>

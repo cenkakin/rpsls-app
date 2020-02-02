@@ -16,7 +16,6 @@ public class GameProcessor {
   public Game run(UserHand userHand) {
     final ComputerHand computerHand = ComputerHand.create();
     final Game game = Game.play(userHand, computerHand);
-    System.out.println(Thread.currentThread().getId());
     eventPublisher.publishEvent(new GamePlayedEvent(game));
     return game;
   }
