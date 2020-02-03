@@ -11,7 +11,7 @@ _rules: https://www.instructables.com/id/How-to-Play-Rock-Paper-Scissors-Lizard-
 ./mvnw spring-boot:run
 ```
 
-- Run via shell script (It basically pull and run docker image):
+- Run via shell script (It basically pulls and runs docker image):
  
 ```
 sh ./run.sh

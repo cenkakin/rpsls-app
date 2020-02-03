@@ -32,13 +32,18 @@ public abstract class Hand {
 
     private static final Random RANDOM = new Random();
 
+    private static final HandType[] HAND_TYPES = HandType.values();
+
     ComputerHand(HandType handType) {
       super(handType);
     }
 
     public static ComputerHand create() {
-      HandType[] values = HandType.values();
-      return new ComputerHand(values[RANDOM.nextInt(values.length)]);
+      return new ComputerHand(randomHandType());
+    }
+
+    private static HandType randomHandType() {
+      return HAND_TYPES[RANDOM.nextInt(HAND_TYPES.length)];
     }
   }
 

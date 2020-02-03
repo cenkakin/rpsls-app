@@ -26,21 +26,21 @@ public class GameResultDto {
 
   public static GameResultDto resolve(Game game) {
     final HandType computerHandType = game.getComputerHand().get();
-    final String result = ResultTypeDto.fromGameResult(game.getResult()).getResult();
-    return new GameResultDto(result, computerHandType.getValue());
+    final String resultVal = ResultTypeDto.fromGameResult(game.getResult()).getValue();
+    return new GameResultDto(resultVal, computerHandType.getValue());
   }
 
   public static GameResultDto unknown() {
-    return new GameResultDto(ResultTypeDto.UNKNOWN.getResult());
+    return new GameResultDto(ResultTypeDto.UNKNOWN.getValue());
   }
 
   public enum ResultTypeDto {
     WIN("WIN"), DRAW("DRAW"), LOST("LOST"), UNKNOWN("UNKNOWN");
 
-    private final String result;
+    private final String value;
 
-    ResultTypeDto(String result) {
-      this.result = result;
+    ResultTypeDto(String value) {
+      this.value = value;
     }
 
     public static ResultTypeDto fromGameResult(Game.Result gameStatus) {
@@ -51,8 +51,8 @@ public class GameResultDto {
       };
     }
 
-    public String getResult() {
-      return result;
+    public String getValue() {
+      return value;
     }
   }
 }

@@ -33,7 +33,7 @@ public class GameController {
   }
 
   @ExceptionHandler(HttpMessageNotReadableException.class)
-  public ResponseEntity handleHttpMessageNotReadableException() {
+  public ResponseEntity<String> handleHttpMessageNotReadableException() {
     return ResponseEntity.badRequest().body("Request body is not valid!");
   }
 }
